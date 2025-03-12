@@ -1,3 +1,17 @@
+"""
+Redis client-side caching implementation.
+
+This module provides a client-side caching system for Redis commands and their responses.
+It includes:
+- Cache implementation with configurable eviction policies
+- LRU (Least Recently Used) eviction strategy
+- Support for caching read-only Redis commands
+- Cache entry management and configuration interfaces
+
+The cache helps reduce network round-trips for frequently accessed read-only data
+by storing command results locally.
+"""
+
 from abc import ABC, abstractmethod
 from collections import OrderedDict
 from dataclasses import dataclass
